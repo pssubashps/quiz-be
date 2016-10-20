@@ -11,7 +11,8 @@ var questions = require('./routes/questions');
 
 var app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/quiz');
+//mongoose.connect('mongodb://localhost/quiz');
+mongoose.connect('mongodb://quizuser:quizuser@ds063186.mlab.com:63186/quiz');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
