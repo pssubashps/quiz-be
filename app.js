@@ -10,9 +10,10 @@ var users = require('./routes/users');
 var questions = require('./routes/questions');
 
 var app = express();
+var options = { promiseLibrary: require('bluebird') };
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/quiz');
-mongoose.connect('mongodb://quizuser:quizuser@ds063186.mlab.com:63186/quiz');
+mongoose.connect('mongodb://quizuser:quizuser@ds063186.mlab.com:63186/quiz',options);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

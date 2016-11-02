@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
-
+var Promise = require('bluebird');
 
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 
 var questionsSchema = new Schema({
@@ -15,5 +16,8 @@ var questionsSchema = new Schema({
 	correct_answer : String,
 	comments:String
 });
-module.exports = mongoose.model('questions', questionsSchema);
+var Questions = mongoose.model('questions', questionsSchema);
+Promise.promisifyAll(Questions);
+Promise.promisifyAll(Questions.prototype);
+module.exports = Questions;
 //var Questions = mongoose.model('Questions', Questions);
