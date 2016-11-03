@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var questions = require('./routes/questions');
+var contact = require('./routes/contact');
 
 var app = express();
 var options = { promiseLibrary: require('bluebird') };
@@ -46,6 +47,7 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 app.use('/questions', questions);
+app.use('/contact', contact);
 
 
 // catch 404 and forward to error handler
