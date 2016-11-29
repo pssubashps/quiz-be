@@ -9,7 +9,7 @@ var newsletterSchema = new Schema({
 	email: { type: String, unique: true }
 
 },{ timestamps: { createdAt: 'created_at' } });
-var Newsletter = mongoose.model('contact', newsletterSchema);
+var Newsletter = mongoose.model('newsletter', newsletterSchema);
 Promise.promisifyAll(Newsletter);
 Promise.promisifyAll(Newsletter.prototype);
 module.exports = Newsletter;
